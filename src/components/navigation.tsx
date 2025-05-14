@@ -1,4 +1,4 @@
-import { SignInButton, SignOutButton } from '@clerk/nextjs';
+import { SignInButton, UserButton } from '@clerk/nextjs';
 
 export const Navigation = () => {
   return (
@@ -10,7 +10,8 @@ export const Navigation = () => {
           </div>
           <div className="flex items-center gap-4">
             <SignInButton mode="modal" />
-            <SignOutButton />
+            {/* <SignOutButton /> */}
+            <UserButton />
           </div>
         </div>
       </div>
