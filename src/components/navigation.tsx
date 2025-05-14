@@ -1,4 +1,4 @@
-import { SignInButton, UserButton } from '@clerk/nextjs';
+import { SignInButton, UserButton, SignedIn, SignedOut } from '@clerk/nextjs';
 
 export const Navigation = () => {
   return (
@@ -9,9 +9,13 @@ export const Navigation = () => {
             <h1 className="text-xl font-semibold text-[var(--foreground)]">Next.js App</h1>
           </div>
           <div className="flex items-center gap-4">
-            <SignInButton mode="modal" />
-            {/* <SignOutButton /> */}
-            <UserButton />
+            <SignedOut>
+              <SignInButton mode="modal" />
+            </SignedOut>
+            <SignedIn>
+              {/* <SignOutButton /> */}
+              <UserButton />
+            </SignedIn>
           </div>
         </div>
       </div>
